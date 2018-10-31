@@ -14,3 +14,9 @@ Version 1.0 - Creacion del repositorio
     - isFull(list)
     - size(list)
 - Se crea la funcion de testeo en lista.js
+
+Version 1.0.1 - Modificacion lista.js
+- Se han creado las funciones y añadido al testeo:
+    - add(list,elem)
+    - addAt(list,elem,index)
+
