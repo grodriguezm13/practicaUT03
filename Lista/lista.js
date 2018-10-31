@@ -45,21 +45,6 @@ function size(list){
  	return contador;
 }
 
-//Añade un nuevo elemento al final de la lista. Devuelve el tamaño de la lista una vez añadido.
-function add(list,elem) {
-    
-}
-
-//Añade un nuevo elemento en la posición especificada en la lista. Devuelve el tamaño de la lista una vez añadido.
-function addAt(list,elem,index) {
-    
-}
-
-//Devuelve el elemento de la lista de la posición indicada.
-function get(list,index) {
-    
-}
-
 //Funcion que prueba las funciones mostrando los resultados por consolo
 function testFunciones() {
     var lista=[1,5,7,98,55,74,26,33,95,74]; 	
