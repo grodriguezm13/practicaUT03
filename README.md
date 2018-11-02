@@ -20,3 +20,15 @@ Version 1.0.1 - Modificacion lista.js
     - add(list,elem)
     - addAt(list,elem,index)
 
+Version 1.0.2 - Modificacion lista.js
+- Se han creado las funciones y añadido al testeo:
+    - get(list,index)
+    - indexOf(list,elem)
+    - lastIndexOf(list,elem)
+    - capacity(list)
+    - clear(list)
+    - firstElement(list)
+    - lastElement(list)
+
+- Se ha modificado la pagina lista.html
+

@@ -1,4 +1,4 @@
-</<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Implementación de una lista</title>
@@ -7,9 +7,29 @@
 <body>
   <h1>Implementación de una lista</h1>
   Introduce un número: <br/>
-  <input type="text" id="num" value="" placeholder="Entero" onfocus="cleanData()" />
-  <button id="pushButton" onclick="">Añade número</button>
-  <button id="popButton" onclick="">Consume número</button>
+  <input type="text" id="num" value="" placeholder="Entero" onfocus="this.value=''"/>
+  <button id="poner" onclick="rellenar(document.getElementById('num').value);">Añade número</button>
+  <hr>
+  Introduce un número: <br/>
+  <input type="text" id="num" value="" placeholder="Entero" onfocus="this.value=''"/>
+  Posicion:
+  <select>
+    <option value="0"> 0 </option>
+    <option value="1"> 1 </option>
+    <option value="2"> 2 </option>
+    <option value="3"> 3 </option>
+    <option value="4"> 4 </option>
+    <option value="5"> 5 </option>
+    <option value="6"> 6 </option>
+    <option value="7"> 7 </option>
+    <option value="8"> 8 </option>
+    <option value="9"> 9 </option>
+    <option value="10"> 10 </option>
+  </select>
+  <button id="poner" onclick="">Añade número</button>
+  <hr>
+
+  <button id="quitar" onclick="">Consume número</button>
 
   <br/><br/>
 
