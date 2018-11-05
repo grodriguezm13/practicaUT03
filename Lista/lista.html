@@ -6,14 +6,11 @@
 </head>
 <body>
   <h1>Implementación de una lista</h1>
-  Introduce un número: <br/>
-  <input type="text" id="num" value="" placeholder="Entero" onfocus="this.value=''"/>
-  <button id="poner" onclick="rellenar(document.getElementById('num').value);">Añade número</button>
-  <hr>
-  Introduce un número: <br/>
+  Introduce un número: <br>
   <input type="text" id="num" value="" placeholder="Entero" onfocus="this.value=''"/>
   Posicion:
-  <select>
+  <select id="posicion">
+    <option value=""> - </option>
     <option value="0"> 0 </option>
     <option value="1"> 1 </option>
     <option value="2"> 2 </option>
@@ -25,13 +22,17 @@
     <option value="8"> 8 </option>
     <option value="9"> 9 </option>
     <option value="10"> 10 </option>
-  </select>
-  <button id="poner" onclick="">Añade número</button>
+  </select><br>
+  <button id="poner" onclick="elegir(document.getElementById('num').value,document.getElementById('posicion').value);">Añade número</button>
+  <button id="quitarPosicion" onclick="eliminarEnPosicion(document.getElementById('posicion').value);">Consume número</button>
+  <button id="quitarElemento" onclick="eliminar(document.getElementById('num').value);">Eliminar numero </button>
+  <button id="sustituir" onclick="sustituir(document.getElementById('num').value,document.getElementById('posicion').value);">Sustituir numero </button>
   <hr>
-
-  <button id="quitar" onclick="">Consume número</button>
-
-  <br/><br/>
+  Si no se introduce ninguna posicion los numeros se añaden al final de la lista.<br>
+  Para el boton consume numero seleccionar solamente una posicion.<br>
+  Para el boton eliminar numero solo introducir numero en la casilla.<br>
+  Para el boton sustituir introducir numero en la casilla y seleccionar posicion.<br>
+  <br><br>
 
   <p id="error" style="color:red"></p> 
   <div id="lista">

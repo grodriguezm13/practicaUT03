@@ -30,5 +30,23 @@ Version 1.0.2 - Modificacion lista.js
     - firstElement(list)
     - lastElement(list)
 
-- Se ha modificado la pagina lista.html
+- Se ha modificado la pagina lista.html, ahora permite añadir numeros al final de la lista
 
+Version 1.0.3 - Modificacion lista.js y lista.html
+- Se han creado las funciones:
+    - elegir(num,posicion)
+    - rellenar(num)
+    - rellenarEn(num,posicion)
+
+- Se ha modificado la pagina lista.html, ahora permite añadir numeros en una posicion de la lista
+
+Version 1.0.4 - Modificacion lista.js y lista.html
+- Se han creado las funciones:
+    - remove(list,index)
+    - removeElement(list,elem)
+    - set(list,elem,index)
+    - eliminarEnPosicion(posicion)
+    - eliminar(numero)
+    - sustituir(numero,posicion)
+
+-Se han añadido botones en la pagina lista.html
