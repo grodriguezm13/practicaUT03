@@ -279,6 +279,7 @@ function eliminarEnPosicion(posicion){
     try {
         remove(listaNumeros,posicion);
         lista.innerHTML = toString(listaNumeros);
+        lista.innerHTML = toString(listaNumeros);
     } catch (err) {
         error.innerHTML = err;
     }	
@@ -290,8 +291,12 @@ function eliminar(numero){
     var lista = document.getElementById ("lista");
     error.innerHTML = "";  
     try {
-        removeElement(listaNumeros,numero);
-        lista.innerHTML = toString(listaNumeros);
+        if (removeElement(listaNumeros,numero) === false) {
+            error.innerHTML = "No se ha eliminado por que no se ha encontrado el numero en la lista";
+        }else{
+            lista.innerHTML = toString(listaNumeros);
+        } 
+        
     } catch (err) {
         error.innerHTML = err;
     }	
@@ -303,7 +308,7 @@ function sustituir(numero,posicion){
     var lista = document.getElementById ("lista");
     error.innerHTML = "";  
     try {
-        set(listaNumeros,numero,posicion);
+        set(listaNumeros,numero,posicion); 
         lista.innerHTML = toString(listaNumeros);
     } catch (err) {
         error.innerHTML = err;
