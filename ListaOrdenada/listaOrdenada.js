@@ -55,7 +55,7 @@ function add(list,elem) {
                 colocado = true;
             }
             if (elemento < list[i] ) {
-                for (let j = (i), aux = 0; j < longitud; j++){
+                for (let j = i, aux = 0; j < longitud; j++){
                     aux = list[j]; 
                     list[j] = elemento;
                     elemento = aux;
@@ -177,15 +177,15 @@ function lastElement(list){
 function remove(list,index){
     var borrado = list[index];
     var longitud = size(list);
-    if (index > longitud) {
+    if (index >= longitud) {
         throw "El indice no debe ser mayor que la longitud de la lista ("+longitud+")";
     } 
  	if (!isEmpty(list)){
-        for (let i = index, aux = 0; i < longitud; i++){
-            aux = list[(i+1)]; 
+        for (var i = index, aux = 0; i < longitud-1; i++){
+            aux = list[i+1];
             list[i] = aux;
         }
-        list[longitud-1] = Number.NaN;
+        list[i] = Number.NaN;
  	} else {
  		throw "La lista está vacia. No puedes eliminar elementos";
  	}
@@ -196,7 +196,7 @@ function remove(list,index){
 function removeElement(list,elem){
     var eliminado = false;
     var elemento = parseInt(elem);
-    var encontrado = indexOf(list,elem);
+    var encontrado = indexOf(list,elemento);
     if (!isNaN(elemento)) {
         //Si esta el numero lo elimina
         if (encontrado != -1) {
@@ -233,14 +233,18 @@ function eliminarEnPosicion(posicion){
     var error = document.getElementById ("error");
     var lista = document.getElementById ("lista");
     error.innerHTML = "";  
-    try {
-        remove(listaOrdenada,posicion);
-        lista.innerHTML = toString(listaOrdenada);
-        lista.innerHTML = toString(listaOrdenada);
-    } catch (err) {
-        error.innerHTML = err;
-    }	
- }
+    if (posicion != "") {
+        try {
+            //Se parsean la posicion a interger
+            remove(listaOrdenada,parseInt(posicion));
+            lista.innerHTML = toString(listaOrdenada);
+        } catch (err) {
+            error.innerHTML = err;
+        }  
+    }else{
+        error.innerHTML = "No has seleccionado posicion";
+    }//Fin del if	
+}
 
 //Elimina el numero introducido en el input
 function eliminar(numero){
@@ -271,15 +275,15 @@ function testFunciones() {
     console.log("Lista: " + lista);
     console.log("Elemento de la posicion 4: "+ get(lista,4));
     console.log("La lista formateada: " + toString(lista));	
-    console.log("Busca el elemento 666 en la lista. Posicion: " + indexOf(lista,666));
-    console.log("Busca el elemento 33 en la lista. Posicion: " + lastIndexOf(lista,33));
+    console.log("Busca el elemento 55 en la lista. Posicion: " + indexOf(lista,55));
+    console.log("Busca el elemento 99 en la lista. Posicion: " + lastIndexOf(lista,99));
     console.log("Capacidad maxima de la lista: "+ capacity(lista));
     console.log("Primer elemento de la lista: " + firstElement(lista));
     console.log("Ultimo elemento de la lista: " + lastElement(lista));
     console.log("Se elimina el elemento de la posicion 2: "+ remove(lista,2));
     console.log("Lista: " + lista);
     console.log("Se elimina el 24 de la lista. ¿Se ha borrado? " + removeElement(lista,24));
-    console.log("Se elimina el 7 de la lista. ¿Se ha borrado? " + removeElement(lista,7));
+    console.log("Se elimina el 44 de la lista. ¿Se ha borrado? " + removeElement(lista,44));
     console.log("Lista: " + lista);
     console.log("Se vacia la lista: "); 
     clear(lista);

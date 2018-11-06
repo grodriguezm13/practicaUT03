@@ -181,16 +181,18 @@ function lastElement(list){
 //Elimina el elemento de la posición indicada. Devuelve el elemento borrado.
 function remove(list,index){
     var borrado = list[index];
+    //Se transforma el indice a entero
+    index = parseInt(index);
     var longitud = size(list);
-    if (index > longitud) {
+    if (index >= longitud) {
         throw "El indice no debe ser mayor que la longitud de la lista ("+longitud+")";
     } 
  	if (!isEmpty(list)){
-        for (let i = index, aux = 0; i < longitud; i++){
-            aux = list[(i+1)]; 
+        for (var i = index, aux = 0; i < longitud-1; i++){
+            aux = list[i+1];
             list[i] = aux;
         }
-        list[longitud-1] = Number.NaN;
+        list[i] = Number.NaN;
  	} else {
  		throw "La lista está vacia. No puedes eliminar elementos";
  	}
@@ -201,7 +203,7 @@ function remove(list,index){
 function removeElement(list,elem){
     var eliminado = false;
     var elemento = parseInt(elem);
-    var encontrado = indexOf(list,elem);
+    var encontrado = indexOf(list,elemento);
     if (!isNaN(elemento)) {
         //Si esta el numero lo elimina
         if (encontrado != -1) {
@@ -264,7 +266,8 @@ function rellenarEn(num,posicion){
     var lista = document.getElementById ("lista");
     error.innerHTML = "";  
     try {
-        addAt(listaNumeros,num,posicion);
+        //Se parsea la posicion a interger
+        addAt(listaNumeros,num,parseInt(posicion));
         lista.innerHTML = toString(listaNumeros);
     } catch (err) {
         error.innerHTML = err;
@@ -277,7 +280,8 @@ function eliminarEnPosicion(posicion){
     var lista = document.getElementById ("lista");
     error.innerHTML = "";  
     try {
-        remove(listaNumeros,posicion);
+        //Se parsea la posicion a interge
+        remove(listaNumeros,parseInt(posicion));
         lista.innerHTML = toString(listaNumeros);
         lista.innerHTML = toString(listaNumeros);
     } catch (err) {

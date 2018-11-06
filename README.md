@@ -4,6 +4,8 @@
 
 Autor - Guillermo Rodriguez Moraga
 
+Version 1.1.1 - Correccion de errores en el parseo de datos
+
 Version 1.1 - Creacion de listaOrdenada.js y listaOrdenada.html
 - Se añade la carpeta ListaOrdenada
 - Se añade el fichero listaOrdenada.html
