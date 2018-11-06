@@ -4,6 +4,29 @@
 
 Autor - Guillermo Rodriguez Moraga
 
+Version 1.1 - Creacion de listaOrdenada.js y listaOrdenada.html
+- Se añade la carpeta ListaOrdenada
+- Se añade el fichero listaOrdenada.html
+- Se añade el fichero listaOrdenada.js
+- Se han creado las funciones y añadido al testeo de listaOrdenada.js:
+    - create()
+    - isEmpty(list)
+    - isFull(list)
+    - size(list)
+    - add(list,elem)
+    - get(list,index)
+    - indexOf(list,elem)
+    - lastIndexOf(list,elem)
+    - capacity(list)
+    - clear(list)
+    - firstElement(list)
+    - lastElement(list)
+    - remove(list,index)
+    - removeElement(list,elem)
+    - rellenar(num)
+    - eliminar(numero)
+    - eliminarEnPosicion(posicion)
+
 Version 1.0.4 - Modificacion lista.js y lista.html
 - Se han creado las funciones:
     - remove(list,index)
@@ -12,8 +35,7 @@ Version 1.0.4 - Modificacion lista.js y lista.html
     - eliminarEnPosicion(posicion)
     - eliminar(numero)
     - sustituir(numero,posicion)
-
--Se han añadido botones en la pagina lista.html
+- Se han añadido botones en la pagina lista.html
 
 Version 1.0.3 - Modificacion lista.js y lista.html
 - Se han creado las funciones:
