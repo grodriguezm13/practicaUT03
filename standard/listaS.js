@@ -6,47 +6,32 @@ var ELEMENTOS_MAXIMOS = 10;
 //Crea una lista con el array ya instanciado con el número de elementos máximos.
 function create(){
     var list = [];
-    for (let i = 0; i < ELEMENTOS_MAXIMOS; i++) {
-        list[i] = Number.NaN;
-    }
-    return list;
+ 	return list;
 }
 
 //Devuelve true o false en función de si la lista está vacía.
 function isEmpty(list) {
-    var vacio = false;
-    if (isNaN(list[0])) {
-        vacio = true;
-    }
-    return vacio;
+    return (list.length === 0);
 }
 
 //Devuelve true o false en función de si la lista está llena.
 function isFull(list) {
-    var isFull = false;
-    if (!isNaN(list[ELEMENTOS_MAXIMOS-1])){
-        isFull = true;
-    }
-    return isFull;
+    return (list.length === ELEMENTOS_MAXIMOS);
 }
 
 //Devuelve el número de elementos de la lista.
 function size(list){
-    var contador = 0;
- 	while (contador < ELEMENTOS_MAXIMOS  && !isNaN(list[contador])){
- 		contador++;
- 	}
- 	return contador;
+    return list.length;
 }
 
 //Añade un nuevo elemento al final de la lista. Devuelve el tamaño de la lista una vez añadido.
 function add(list,elem) {
-    var elemento = parseInt(elem);
- 	if (isNaN(elemento)) {
+    elem = parseInt(elem);
+ 	if (isNaN(elem)) {
         throw "El elemento no es un numero";
  	}
  	if (!isFull(list)){
- 		list[size(list)] = elemento;
+ 		list.push(elem);
  	} else {
  		throw "La lista está llena. No puedes añadir mas elementos";
  	}
@@ -56,7 +41,6 @@ function add(list,elem) {
 //Añade un nuevo elemento en la posición especificada en la lista. Devuelve el tamaño de la lista una vez añadido.
 function addAt(list,elem,index) {
     elem = parseInt(elem);
-    var aux = 0;
     var longitud = size(list);
  	if (isNaN(elem)) {
  		throw "El elemento que quieres introducir no es un numero";
@@ -65,12 +49,7 @@ function addAt(list,elem,index) {
         throw "El indice no debe ser mayor que la longitud de la lista ("+longitud+")";
     } 
  	if (!isFull(list)){
-        for (let i = index; i < longitud; i++){
-            aux = list[i]; 
-            list[i] = elem;
-            elem = aux;
-         }
-         list[longitud] = elem;
+        list.splice(index, 0, elem);
  	} else {
  		throw "La lista está llena. No se pueden añadir mas elementos";
  	}
@@ -181,18 +160,12 @@ function lastElement(list){
 //Elimina el elemento de la posición indicada. Devuelve el elemento borrado.
 function remove(list,index){
     var borrado = list[index];
-    //Se transforma el indice a entero
-    index = parseInt(index);
     var longitud = size(list);
     if (index >= longitud) {
         throw "El indice no debe ser mayor que la longitud de la lista ("+longitud+")";
     } 
  	if (!isEmpty(list)){
-        for (var i = index, aux = 0; i < longitud-1; i++){
-            aux = list[i+1];
-            list[i] = aux;
-        }
-        list[i] = Number.NaN;
+        list.splice(index, 1);
  	} else {
  		throw "La lista está vacia. No puedes eliminar elementos";
  	}
@@ -220,12 +193,12 @@ function removeElement(list,elem){
 function set(list,elem,index){
     var anterior = list[index];
     var longitud = size(list);
-    var elemento = parseInt(elem);
+    elem = parseInt(elem);
     if (index > longitud) {
         throw "El indice no debe ser mayor que la longitud de la lista ("+longitud+")";
     } 
-    if (!isNaN(elemento)) {
-        list[index] = elemento;
+    if (!isNaN(elem)) {
+        list[index] = elem;
     }else{
         throw "El elemento no es un numero";
     }

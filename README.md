@@ -4,6 +4,12 @@
 
 Autor - Guillermo Rodriguez Moraga
 
+Version 1.2 - Mejoras del codigo y Creacion de listaS.html y listaS.js
+- Se añade la carpeta standard
+- Se hace una copia de lista.html llamada listaS.html y se añade a la carpeta standard
+- Se hace una copia de lista.js llamada listaS.js y se añade a la carpeta standard
+    - Se modifican sus funciones para que utilice funciones de arrays
+
 Version 1.1.1 - Correccion de errores en el parseo de datos
 
 Version 1.1 - Creacion de listaOrdenada.js y listaOrdenada.html
