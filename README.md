@@ -4,6 +4,12 @@
 
 Autor - Guillermo Rodriguez Moraga
 
+Version 1.3.1 - Mejoras del codigo y correccion de errores
+- Se ha modificado lista.js
+- Se ha modificado listaOrdenada.js
+- Se ha modificado listaS.js
+- Se ha modificado listaOrdenadaS.js
+
 Version 1.3 - Mejoras del codigo y Creacion de listaOrdenadaS.html y listaOrdenadaS.js
 - Se hace una copia de listaOrdenada.html llamada listaOrdenadaS.html y se añade a la carpeta standard
 - Se hace una copia de listaOrdenada.js llamada listaOrdenadaS.js y se añade a la carpeta standard

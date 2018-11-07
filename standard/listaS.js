@@ -1,7 +1,7 @@
 "use strict";
 
 //Constante para el numero maximo de elementos de la lista
-var ELEMENTOS_MAXIMOS = 10;
+const ELEMENTOS_MAXIMOS = 10;
 
 //Crea una lista con el array ya instanciado con el número de elementos máximos.
 function create(){
@@ -84,40 +84,12 @@ function toString(list) {
 
 //Devuelve la posición del elemento indicado. Si el elemento no está en la lista devuelve -1.
 function indexOf(list,elem){
-    var posicion = -1;
-    var elemento = parseInt(elem);
-    if (!isNaN(elemento)) {
-        var longitud = size(list);	
-        var i = 0;
-        while (i < longitud && posicion === -1){
-            if (list[i] === elemento) {
-                posicion = i;
-            }
-            i++;
-        }//Fin del while
-    } else{
-        throw "El elemento no es un numero";
-    }
-    return posicion;
+    return list.indexOf(parseInt(elem));
 }
 
 //Devuelve la posición del elemento indicado comenzando por el final. Si el elemento no está en la lista devuelve -1
 function lastIndexOf(list,elem){
-    var posicion = -1;
-    var elemento = parseInt(elem);
-    if (!isNaN(elemento)) {
-        var fin = 0;	
-        var i = size(list);
-        while (i > fin && posicion === -1){
-            if (list[i] === elemento) {
-                posicion = i;
-            }
-            i--;
-        }//Fin del while
-    } else{
-        throw "El elemento no es un numero";
-    }
-    return posicion;
+    return list.lastIndexOf(parseInt(elem));
 }
 
 //Devuelve el máximo número de elementos que podemos tener en la lista.
@@ -312,6 +284,7 @@ function testFunciones() {
  	console.log("¿Esta vacía?: " + isEmpty(lista));
     console.log("Longitud: " + size(lista));
     console.log("¿Esta llena?: " + isFull(lista));
+    console.log("Capacidad total: "+ capacity(lista));
     console.log("Añadimos el numero 73 al final: " + add(lista,73));
     console.log("Lista: " + lista);
     console.log("Añadimos el numero 99 en la posicion 3: " + addAt(lista,99,3));

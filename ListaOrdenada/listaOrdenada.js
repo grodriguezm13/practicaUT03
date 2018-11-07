@@ -1,7 +1,7 @@
 "use strict";
 
 //Constante para el numero maximo de elementos de la lista
-var ELEMENTOS_MAXIMOS = 10;
+const ELEMENTOS_MAXIMOS = 10;
 
 //Crea una lista con el array ya instanciado con el número de elementos máximos.
 function create(){
@@ -41,26 +41,27 @@ function size(list){
 
 //Añade un nuevo elemento a la lista manteniendo la relación de orden. Devuelve el tamaño de la lista una vez añadido.
 function add(list,elem) {
-    var elemento = parseInt(elem);
+    elem = parseInt(elem);
     var longitud = size(list);
     var i = 0;
     var colocado = false;
- 	if (isNaN(elemento)) {
+ 	if (isNaN(elem)) {
         throw "El elemento no es un numero";
  	}
  	if (!isFull(list)){
         while ((i < longitud) || !(colocado)){
+            //Para añadir el primero si la lista es vacia, por que contiene NaN
             if (isNaN(list[i])) {
-                list[i] = elemento;
+                list[i] = elem;
                 colocado = true;
             }
-            if (elemento < list[i] ) {
+            if (elem < list[i] ) {
                 for (let j = i, aux = 0; j < longitud; j++){
                     aux = list[j]; 
-                    list[j] = elemento;
-                    elemento = aux;
+                    list[j] = elem;
+                    elem = aux;
                 }
-                list[longitud] = elemento;
+                list[longitud] = elem;
                 colocado = true;  
             }//Fin del if
             i++;
@@ -101,12 +102,12 @@ function toString(list) {
 //Devuelve la posición del elemento indicado. Si el elemento no está en la lista devuelve -1.
 function indexOf(list,elem){
     var posicion = -1;
-    var elemento = parseInt(elem);
-    if (!isNaN(elemento)) {
+    elem = parseInt(elem);
+    if (!isNaN(elem)) {
         var longitud = size(list);	
         var i = 0;
         while (i < longitud && posicion === -1){
-            if (list[i] === elemento) {
+            if (list[i] === elem) {
                 posicion = i;
             }
             i++;
@@ -120,12 +121,12 @@ function indexOf(list,elem){
 //Devuelve la posición del elemento indicado comenzando por el final. Si el elemento no está en la lista devuelve -1
 function lastIndexOf(list,elem){
     var posicion = -1;
-    var elemento = parseInt(elem);
-    if (!isNaN(elemento)) {
+    elem = parseInt(elem);
+    if (!isNaN(elem)) {
         var fin = 0;	
         var i = size(list);
         while (i > fin && posicion === -1){
-            if (list[i] === elemento) {
+            if (list[i] === elem) {
                 posicion = i;
             }
             i--;
@@ -195,9 +196,9 @@ function remove(list,index){
 //Elimina el elemento indicado de la lista.Devuelve true si se ha podido borrar el elemento, false en caso contrario.
 function removeElement(list,elem){
     var eliminado = false;
-    var elemento = parseInt(elem);
-    var encontrado = indexOf(list,elemento);
-    if (!isNaN(elemento)) {
+    elem = parseInt(elem);
+    var encontrado = indexOf(list,elem);
+    if (!isNaN(elem)) {
         //Si esta el numero lo elimina
         if (encontrado != -1) {
             remove(list,encontrado);
@@ -271,6 +272,7 @@ function testFunciones() {
  	console.log("¿Esta vacía?: " + isEmpty(lista));
     console.log("Longitud: " + size(lista));
     console.log("¿Esta llena?: " + isFull(lista));
+    console.log("Capacidad total: "+ capacity(lista));
     console.log("Añadimos el numero 73: " + add(lista,73));
     console.log("Lista: " + lista);
     console.log("Elemento de la posicion 4: "+ get(lista,4));
