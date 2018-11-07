@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Implementación de una lista</title>
+  <meta charset="utf-8"/>  
+</head>
+<body>
+  <h1>Implementación de una lista ordenada con funciones de array</h1>
+  Introduce un número: <br>
+  <input type="text" id="num" value="" placeholder="Entero" onfocus="this.value=''"/>
+  Posicion:
+  <select id="posicion">
+    <option value="">-</option>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select><br>
+  <button id="poner" onclick="rellenar(document.getElementById('num').value);">Añade número</button>
+  <button id="quitarPosicion" onclick="eliminarEnPosicion(document.getElementById('posicion').value);">Consume posicion</button>
+  <button id="quitarElemento" onclick="eliminar(document.getElementById('num').value);">Eliminar numero</button>
+  <hr>
+  Para añadir numero no hace falta seleccionar posicion.<br>
+  Para el boton consume posicion seleccionar solamente una posicion.<br>
+  Para el boton eliminar numero solo introducir numero en la casilla.<br>
+  Para el boton sustituir introducir numero en la casilla y seleccionar posicion.<br> 
+  <br><br>
+
+  <p id="error" style="color:red"></p> 
+  <div id="lista">
+  </div>
+  <script src="listaOrdenadaS.js"></script>
+</body>
+</html>

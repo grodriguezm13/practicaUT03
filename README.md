@@ -4,6 +4,11 @@
 
 Autor - Guillermo Rodriguez Moraga
 
+Version 1.3 - Mejoras del codigo y Creacion de listaOrdenadaS.html y listaOrdenadaS.js
+- Se hace una copia de listaOrdenada.html llamada listaOrdenadaS.html y se añade a la carpeta standard
+- Se hace una copia de listaOrdenada.js llamada listaOrdenadaS.js y se añade a la carpeta standard
+    - Se modifican sus funciones para que utilice funciones de arrays
+
 Version 1.2 - Mejoras del codigo y Creacion de listaS.html y listaS.js
 - Se añade la carpeta standard
 - Se hace una copia de lista.html llamada listaS.html y se añade a la carpeta standard
